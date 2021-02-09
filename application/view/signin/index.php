@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <?php echo $pageTitle; ?>
+    <title> <?php echo $pageTitle; ?> </title>
 
     <!-- Custom fonts for this template-->
     <link href="<?php echo URL ; ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -37,15 +37,16 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form  role="form" action="<?php echo URL; ?>signin/login" method="POST">
+                                        <fieldset>
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                                name="email" type="email" 
+                                                placeholder="Email Address">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                                name="password" type="password" placeholder="Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -54,10 +55,10 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="tables.html" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
-                                        <hr>
+                                            <button class="btn btn-primary btn-user btn-block" name="submit_login" type="submit">Login</button>
+                                        </fieldset>
+                                    </form>
+                                    
                                     <hr>
                                     <div class="text-center">
                                         <a class="small" href="#">Forgot Password?</a>
@@ -73,9 +74,16 @@
 
             </div>
 
-        </div>
 
-    </div>
+    <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Evidence Action 2020</span>
+                    </div>
+                </div>
+            </footer>
+    <!-- End of Footer -->
 
     <!-- Bootstrap core JavaScript-->
     <script src="<?php echo URL ; ?>vendor/jquery/jquery.min.js"></script>

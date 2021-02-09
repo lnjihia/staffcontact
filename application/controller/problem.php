@@ -16,12 +16,7 @@ class Problem extends Controller
         // unique title of the page that will be displayed on the title bar
         $pageTitle = 'Error 404';
 
-        require APP . 'view/_templates/session.php';
-        require APP . 'view/problem/header.php';
-        require APP . 'view/_templates/navbar.php';
-        require APP . 'view/problem/sidebar.php';
         require APP . 'view/problem/index.php';
-        require APP . 'view/problem/script.php';
-        require APP . 'view/_templates/footer.php';
+        
     }
 }

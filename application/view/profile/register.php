@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <?php echo $pageTitle; ?>
+    <title> <?php echo $pageTitle; ?> </title>
 
     <!-- Custom fonts for this template-->
     <link href="<?php echo URL ;?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -41,15 +41,13 @@
 
                          <!-- Nav Item - Search PageLink -->
                         <li class="nav-item">
-                            <a class="nav-link" href="tables.html">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Search Page
-                            </a>
+                            <a class="nav-link" href="<?php echo URL . 'social';?>" >
+                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Search Page</a>
                         </li>
 
                          <!-- Nav Item - Logout Button -->
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html" data-toggle="modal" data-target="#logoutModal">
+                            <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                             </a>
@@ -164,6 +162,8 @@
             </div>
       </div>
 
+
+
   <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -178,12 +178,21 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="<?php echo URL; ?>signin/logout">Logout</a>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Evidence Action 2020</span>
+                    </div>
+                </div>
+            </footer>
+    <!-- End of Footer -->
 
     <!-- Bootstrap core JavaScript-->
     <script src="<?php echo URL; ?>vendor/jquery/jquery.min.js"></script>

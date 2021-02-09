@@ -25,32 +25,24 @@ class Model
      * @param string $email Email
      * @param string $password Password
      */
-    public function getStaff($email,$password)
+      public function getAllStaff()
     {
-
-        // candidate: manage sql query to the database.
-        // candidate: fulfill the SELECT statement and assign it to the $sql variable below
-
-        $sql = "SELECT firstname, lastname, email, staff.staffid, phonenumber FROM staff INNER JOIN password ON staff.staffid = password.staffid WHERE email=:email AND password=:password";
+        $sql = "SELECT email, phoneno, firstname, lastname, title, dept, station FROM staffdetails";
         $query = $this->db->prepare($sql);
-        $parameters = array(':email' => $email, ':password' => $password);
+        $query->execute();
 
-        // useful for debugging: you can see the SQL behind above construction by using:
-		
-		
-        // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
-
-        $query->execute($parameters);
-
-        // fetch() is the PDO method that gets exactly one result
-
-        return $query->fetch();
+        // fetchAll() is the PDO method that gets all result rows, here in object-style because we defined this in
+        // core/controller.php! If you prefer to get an associative array as the result, then do
+        // $query->fetchAll(PDO::FETCH_ASSOC); or change core/controller.php's PDO options to
+        // $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC ...
+        return $query->fetchAll();
     }
+
 
     /**
      * Get all user's social media accounts from database
      * @param string $staffid Staff id
-     */
+     
     public function getAllSocialMedia($staffid)
     {
         // candidate: manage sql query to the database
@@ -76,7 +68,7 @@ class Model
      * @param string $platform Social media platform
      * @param string $link Link or URL to social media account
      * @param string $staffid Staff id
-     */
+     
     public function addSocialMedia($platform, $link, $staffid)
     {
         // candidate: manage sql query to the database
@@ -93,7 +85,7 @@ class Model
     /**
      * Delete social media account in the database
      * @param int $social_media_id Id of social media account
-     */
+     
     public function deleteSocialMedia($social_media_id)
     {
         // candidate: manage sql query to the database
@@ -106,12 +98,12 @@ class Model
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
 
         $query->execute($parameters);
-    }
+    }*/
 
     /**
      * Get social media account from database
      * @param int $social_media_id Id of social media account
-     */
+     
     public function getSocialMedia($social_media_id)
     {
 
@@ -135,7 +127,7 @@ class Model
      * @param string $platform Social media platform
      * @param string $link Link or URL to social media account
      * @param int $social_media_id Id of social media account
-     */
+     
     public function updateSocialMedia($platform, $link, $social_media_id)
     {
         // candidate: manage sql query to the database
@@ -148,5 +140,5 @@ class Model
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
 
         $query->execute($parameters);
-    }
+    }*/
 }

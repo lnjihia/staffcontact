@@ -11,7 +11,7 @@ class Social extends Controller
      * PAGE: media
      * This page will list all urls associated with the user to their various social media pages
      */
-    public function media($staffid)
+    public function index()
     {
         // unique title of the page that will be displayed on the title bar
         $pageTitle = 'Profile Page';
@@ -20,7 +20,8 @@ class Social extends Controller
         $this->loadModel('Model');
         
         // do getAllSocialMedia() in model/model.php
-        $platforms = $this->model->getAllSocialMedia($staffid);
+        //$platforms = $this->model->getAllSocialMedia($staffid);
+        $staffdetails = $this->model->getAllStaff();
 
         require APP . 'view/social/index.php';
     

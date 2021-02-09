@@ -29,26 +29,26 @@ class SignIn extends Controller
         // load the model
         $this->loadModel('Model');
 
-        // then do getStaff() in model/model.php
-        $staff = $this->model->getStaff($_POST["email"], $_POST["password"]);
+        // then do getAllStaff() in model/model.php
+        $staff = $this->model->getAllStaff($_POST["email"], $_POST["password"]);
         session_start();
-        if ($staff != null) {
-            $_SESSION["firstname"] = $staff->firstname;
-            $_SESSION["lastname"] = $staff->lastname;
-            $_SESSION["email"] = $staff->email;
-            $_SESSION["staffid"] = $staff->staffid;
-            $_SESSION["phonenumber"] = $staff->phonenumber;
-            $_SESSION["login"] = true;
-            $_SESSION["LAST_ACTIVITY"] = time();
+         //if ($staff != null) {
+           // $_SESSION["firstname"] = $staff->firstname;
+           //$_SESSION["lastname"] = $staff->lastname;
+           // $_SESSION["email"] = $staff->email;
+           // $_SESSION["staffid"] = $staff->staffid;
+          //$_SESSION["phoneno"] = $staff->phonenumber;
+          //  $_SESSION["login"] = true;
+            //$_SESSION["LAST_ACTIVITY"] = time();
 
             // load the profile page after successful credentials validation
-            header('Location:' . URL . 'profile');
-        } else {
+         header('Location:' . URL . 'social');
+        //} else {
 
             // redirect the user back to the sign in page upon failed validation to try again
-            header('Location:' . URL . 'signin');
-        }
-    }
+          //  header('Location:' . URL . 'signin');
+        //} 
+    } 
     
     /**
      * Log out user
